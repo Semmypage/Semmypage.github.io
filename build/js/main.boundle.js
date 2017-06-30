@@ -34,7 +34,26 @@ var App = function (_React$Component) {
          return _react2.default.createElement(
             'div',
             null,
-            'Hello There!!!'
+            _react2.default.createElement(
+               'h2',
+               null,
+               'Curriculum Vitae'
+            ),
+            _react2.default.createElement(
+               'h3',
+               null,
+               'Semen Khokhriakov'
+            ),
+            _react2.default.createElement(
+               'h3',
+               null,
+               'Phone: +085 722 05 55'
+            ),
+            _react2.default.createElement(
+               'h3',
+               null,
+               'E-mail: semen.khokhriakov@ucdconnect.ie'
+            )
          );
       }
    }]);
