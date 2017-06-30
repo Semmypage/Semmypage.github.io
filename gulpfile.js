@@ -4,14 +4,13 @@ var gulp       = require("gulp"),
     browserify = require("browserify"),
     connect    = require("gulp-connect"),
     source     = require("vinyl-source-stream"),
-    minifyCSS  = require("gulp-minify-css"),
     rename     = require('gulp-rename'),
     glob       = require('glob'),
     es         = require('event-stream');
 ;
 
 //Default task. This will be run when no task is passed in arguments to gulp
-gulp.task("default",["build", "minify-css"]);
+gulp.task("default",["build"]);
 
 //Convert ES6 ode in all js files in js folder and copy to 
 //build folder as .bundle.js
@@ -35,9 +34,6 @@ gulp.task("build", function(done){
     })
 });
 
-//minify css files
-gulp.task("minify-css", function() {
-    return gulp.src('./css/*.css')
-        .pipe(minifyCSS())
-        .pipe(gulp.dest('./build/css/'))
+gulp.task('watch', function() {
+    gulp.watch('./js/*.js',  './js/*.jsx', ['build']);
 });
